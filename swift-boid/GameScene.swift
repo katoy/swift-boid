@@ -9,37 +9,33 @@
 import SpriteKit
 
 class GameScene: SKScene {
+    let numberOfBirds = 10
+
+    var birdNodes = [BirdNode]()
+
     override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
-        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-        myLabel.text = "Hello, World!";
-        myLabel.fontSize = 65;
-        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
-        
-        self.addChild(myLabel)
+        let degree: Double = 360.0 / Double(self.numberOfBirds)
+        let radius = 120.0
+        for i in 0..<self.numberOfBirds {
+            let birdNode = BirdNode()
+            let radian = degree * Double(i) * M_PI / 180.0
+            let x = Double(CGRectGetMidX(self.frame)) + cos(radian) * radius
+            let y = Double(CGRectGetMidY(self.frame)) + sin(radian) * radius
+            birdNode.position = CGPoint(x: x, y: y)
+
+            self.addChild(birdNode)
+            self.birdNodes.append(birdNode)
+        }
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         /* Called when a touch begins */
-        
-        for touch: AnyObject in touches {
-            let location = touch.locationInNode(self)
-            
-            let sprite = SKSpriteNode(imageNamed:"Spaceship")
-            
-            sprite.xScale = 0.5
-            sprite.yScale = 0.5
-            sprite.position = location
-            
-            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-            
-            sprite.runAction(SKAction.repeatActionForever(action))
-            
-            self.addChild(sprite)
-        }
     }
    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
+        for birdNode in self.birdNodes {
+            birdNode.update(birdNodes: self.birdNodes, frame: self.frame)
+        }
     }
 }

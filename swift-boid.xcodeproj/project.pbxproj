@@ -15,6 +15,13 @@
 		C0A879521ABE52CC000718FF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0A879511ABE52CC000718FF /* Images.xcassets */; };
 		C0A879551ABE52CC000718FF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0A879531ABE52CC000718FF /* LaunchScreen.xib */; };
 		C0A879611ABE52CC000718FF /* swift_boidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A879601ABE52CC000718FF /* swift_boidTests.swift */; };
+		C0A8796C1ABE53AF000718FF /* fire.sks in Resources */ = {isa = PBXBuildFile; fileRef = C0A8796A1ABE53AF000718FF /* fire.sks */; };
+		C0A8796D1ABE53AF000718FF /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = C0A8796B1ABE53AF000718FF /* spark.png */; };
+		C0A8796F1ABE545D000718FF /* BirdNodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A8796E1ABE545D000718FF /* BirdNodes.swift */; };
+		C0A879711ABE549A000718FF /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A879701ABE549A000718FF /* Rule.swift */; };
+		C0A879731ABE54B4000718FF /* CohesionRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A879721ABE54B4000718FF /* CohesionRule.swift */; };
+		C0A879751ABE54D0000718FF /* SeparationRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A879741ABE54D0000718FF /* SeparationRule.swift */; };
+		C0A879771ABE54EB000718FF /* AlignmentRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A879761ABE54EB000718FF /* AlignmentRule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +47,13 @@
 		C0A8795A1ABE52CC000718FF /* swift-boidTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swift-boidTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A8795F1ABE52CC000718FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0A879601ABE52CC000718FF /* swift_boidTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_boidTests.swift; sourceTree = "<group>"; };
+		C0A8796A1ABE53AF000718FF /* fire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = fire.sks; sourceTree = "<group>"; };
+		C0A8796B1ABE53AF000718FF /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		C0A8796E1ABE545D000718FF /* BirdNodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirdNodes.swift; sourceTree = "<group>"; };
+		C0A879701ABE549A000718FF /* Rule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
+		C0A879721ABE54B4000718FF /* CohesionRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CohesionRule.swift; sourceTree = "<group>"; };
+		C0A879741ABE54D0000718FF /* SeparationRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeparationRule.swift; sourceTree = "<group>"; };
+		C0A879761ABE54EB000718FF /* AlignmentRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlignmentRule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +96,11 @@
 			isa = PBXGroup;
 			children = (
 				C0A879461ABE52CC000718FF /* AppDelegate.swift */,
+				C0A8796E1ABE545D000718FF /* BirdNodes.swift */,
+				C0A879701ABE549A000718FF /* Rule.swift */,
+				C0A879721ABE54B4000718FF /* CohesionRule.swift */,
+				C0A879741ABE54D0000718FF /* SeparationRule.swift */,
+				C0A879761ABE54EB000718FF /* AlignmentRule.swift */,
 				C0A879481ABE52CC000718FF /* GameScene.sks */,
 				C0A8794A1ABE52CC000718FF /* GameScene.swift */,
 				C0A8794C1ABE52CC000718FF /* GameViewController.swift */,
@@ -89,6 +108,8 @@
 				C0A879511ABE52CC000718FF /* Images.xcassets */,
 				C0A879531ABE52CC000718FF /* LaunchScreen.xib */,
 				C0A879441ABE52CC000718FF /* Supporting Files */,
+				C0A8796A1ABE53AF000718FF /* fire.sks */,
+				C0A8796B1ABE53AF000718FF /* spark.png */,
 			);
 			path = "swift-boid";
 			sourceTree = "<group>";
@@ -199,7 +220,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0A879551ABE52CC000718FF /* LaunchScreen.xib in Resources */,
+				C0A8796D1ABE53AF000718FF /* spark.png in Resources */,
 				C0A879521ABE52CC000718FF /* Images.xcassets in Resources */,
+				C0A8796C1ABE53AF000718FF /* fire.sks in Resources */,
 				C0A879491ABE52CC000718FF /* GameScene.sks in Resources */,
 				C0A879501ABE52CC000718FF /* Main.storyboard in Resources */,
 			);
@@ -219,7 +242,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0A8796F1ABE545D000718FF /* BirdNodes.swift in Sources */,
+				C0A879711ABE549A000718FF /* Rule.swift in Sources */,
+				C0A879751ABE54D0000718FF /* SeparationRule.swift in Sources */,
 				C0A8794B1ABE52CC000718FF /* GameScene.swift in Sources */,
+				C0A879731ABE54B4000718FF /* CohesionRule.swift in Sources */,
+				C0A879771ABE54EB000718FF /* AlignmentRule.swift in Sources */,
 				C0A8794D1ABE52CC000718FF /* GameViewController.swift in Sources */,
 				C0A879471ABE52CC000718FF /* AppDelegate.swift in Sources */,
 			);
